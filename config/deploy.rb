@@ -1,5 +1,5 @@
 # Change these
-server 'greengunny-dev', port: 80, roles: [:web, :app, :db], primary: true
+server 'greengunny-dev', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:haxplorer/app-skeleton.git'
 set :application,     'app-skeleton'
