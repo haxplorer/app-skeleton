@@ -14,8 +14,9 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  host: localhost
+  password: <%=IO.read(File.expand_path('~/.db')) rescue ''%> 
+  host: 127.0.0.1
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -50,5 +51,6 @@ test:
 production:
   <<: *default
   database: app-skeleton_production
-  username: app-skeleton
-  password: <%= ENV['APP-SKELETON_DATABASE_PASSWORD'] %>
+  #username: app-skeleton
+  #password: <%= ENV['APP-SKELETON_DATABASE_PASSWORD'] %>
+  #password: <%=IO.read(File.expand_path('~/.db')) rescue ''%>
