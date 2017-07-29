@@ -51,6 +51,6 @@ test:
 production:
   <<: *default
   database: app-skeleton_production
-  #username: app-skeleton
+  username: app-skeleton
   #password: <%= ENV['APP-SKELETON_DATABASE_PASSWORD'] %>
-  #password: <%=IO.read(File.expand_path('~/.db')) rescue ''%>
+  password: <%=IO.read(File.expand_path('~/.db')) rescue ''%>
